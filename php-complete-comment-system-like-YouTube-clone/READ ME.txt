@@ -1,0 +1,9 @@
+Login Details
+
+Email: gjhwatters@gmail.com
+password: King4life+
+
+Email: neche1995@gmail.com
+Password: neche1995
+
+Database file is located at database folder. the database name is email_confirmations. You can change it to what ever you want.
