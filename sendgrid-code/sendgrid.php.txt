@@ -1,0 +1,26 @@
+<?php
+            
+            //send email notification
+            
+            $subject = "Verify account";
+            $body = "hi";
+            
+            
+            require 'vendor/autoload.php'; 
+            $email = new \SendGrid\Mail\Mail(); 
+            $email->setFrom("-sender email-", "no-reply:abc.com");
+            $email->setSubject($subject);
+            $email->addTo('-receiver email-', "Example User");
+            $email->addContent("text/html", $body);
+            $sendgrid = new \SendGrid('SG.xxxxxxxxxxx     --your API keys--');
+            echo "<pre>";
+            try {
+                $response = $sendgrid->send($email);
+                print $response->statusCode() . "\n";
+                print_r($response->headers());
+                print $response->body() . "\n";
+                } catch (Exception $e) {
+                    echo 'Caught exception: '. $e->getMessage() ."\n";
+                }
+
+?>
